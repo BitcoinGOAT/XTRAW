@@ -1,18 +1,18 @@
-XTraw Core version 2.2.1 is now available from:
+SEND Core version 2.2.1 is now available from:
 
-  <https://github.com/xtraw-project/xtraw/releases>
+  <https://github.com/send-project/send/releases>
 
 This is a new minor version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/xtraw-project/xtraw/issues>
+  <https://github.com/send-project/send/issues>
 
 Compatibility
 ==============
 
-XTraw Core is extensively tested on multiple operating systems using
+SEND Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
@@ -20,7 +20,7 @@ No attempt is made to prevent installing or running the software on Windows XP, 
 can still do so at your own risk but be aware that there are known instabilities and issues.
 Please do not report issues about Windows XP to the issue tracker.
 
-XTraw Core should also work on most other Unix-like systems but is not
+SEND Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable Changes
@@ -45,7 +45,7 @@ blockchain.
 Additional progress has been made to prevent the wallet crashes that are causing
 the corrupted databases, for example removing the Trading Window (explained below)
 and fixing several other minor memory leaks that were inherited from the version
-of Bitcoin that XTraw was forked from.
+of Bitcoin that SEND was forked from.
 
 RPC Changes
 -----------
@@ -93,7 +93,7 @@ git merge commit are mentioned.
 - #131 `238977b` [Qt] Adds base CSS styles for various elements
 - #134 `f7cabbe` [Qt] Edit masternode.conf in Qt-wallet
 - #135 `f8f1904` [Qt] Show path to wallet.dat in wallet-repair tab
-- #136 `53705f1` [Qt] Fix false flags for MultiSend notification when xtrawing transactions
+- #136 `53705f1` [Qt] Fix false flags for MultiSend notification when sending transactions
 - #137 `ad08051` [Qt] Fix Overview Page Balances when receiving
 - #141 `17a9e0f` [Qt] Squashed trading removal code
 - #151 `0409b12` [Qt] Avoid OpenSSL certstore-related memory leak
@@ -118,4 +118,4 @@ Thanks to everyone who directly contributed to this release:
 - Spock
 - presstab
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/xtraw-project-translations/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/send-project-translations/).

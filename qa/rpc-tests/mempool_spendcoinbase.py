@@ -55,15 +55,15 @@ class MempoolSpendCoinbaseTest(BitcoinTestFramework):
         assert_raises(JSONRPCException, self.nodes[0].sendrawtransaction, spends_raw[1])
 
         # mempool should have just spend_101:
-        assert_equal(self.nodes[0].gextrawmempool(), [ spend_101_id ])
+        assert_equal(self.nodes[0].getrawmempool(), [ spend_101_id ])
 
         # mine a block, spend_101 should get confirmed
         self.nodes[0].setgenerate(True, 1)
-        assert_equal(set(self.nodes[0].gextrawmempool()), set())
+        assert_equal(set(self.nodes[0].getrawmempool()), set())
 
         # ... and now height 102 can be spent:
         spend_102_id = self.nodes[0].sendrawtransaction(spends_raw[1])
-        assert_equal(self.nodes[0].gextrawmempool(), [ spend_102_id ])
+        assert_equal(self.nodes[0].getrawmempool(), [ spend_102_id ])
 
 if __name__ == '__main__':
     MempoolSpendCoinbaseTest().main()

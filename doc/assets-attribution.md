@@ -25,7 +25,7 @@ The following is a list of assets used in the bitcoin source and their proper at
 	src/qt/res/icons/address-book.png, src/qt/res/icons/export.png,
 	src/qt/res/icons/history.png, src/qt/res/icons/key.png,
 	src/qt/res/icons/lock_*.png, src/qt/res/icons/overview.png,
-	src/qt/res/icons/receive.png, src/qt/res/icons/xtraw.png,
+	src/qt/res/icons/receive.png, src/qt/res/icons/send.png,
 	src/qt/res/icons/synced.png, src/qt/res/icons/filesave.png
 
 schollidesign

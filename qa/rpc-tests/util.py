@@ -51,10 +51,10 @@ def sync_mempools(rpc_connections):
     pools
     """
     while True:
-        pool = set(rpc_connections[0].gextrawmempool())
+        pool = set(rpc_connections[0].getrawmempool())
         num_match = 1
         for i in range(1, len(rpc_connections)):
-            if set(rpc_connections[i].gextrawmempool()) == pool:
+            if set(rpc_connections[i].getrawmempool()) == pool:
                 num_match = num_match+1
         if num_match == len(rpc_connections):
             break
@@ -225,7 +225,7 @@ def find_output(node, txid, amount):
     Return index to output of txid with value amount
     Raises exception if there is none.
     """
-    txdata = node.gextrawtransaction(txid, 1)
+    txdata = node.getrawtransaction(txid, 1)
     for i in range(len(txdata["vout"])):
         if txdata["vout"][i]["value"] == amount:
             return i

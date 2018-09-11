@@ -78,7 +78,7 @@ class MempoolCoinbaseTest(BitcoinTestFramework):
 
         self.sync_all()
 
-        assert_equal(set(self.nodes[0].gextrawmempool()), set([ spend_101_id, spend_102_1_id ]))
+        assert_equal(set(self.nodes[0].getrawmempool()), set([ spend_101_id, spend_102_1_id ]))
 
         # Use invalidateblock to re-org back and make all those coinbase spends
         # immature/invalid:
@@ -88,7 +88,7 @@ class MempoolCoinbaseTest(BitcoinTestFramework):
         self.sync_all()
 
         # mempool should be empty.
-        assert_equal(set(self.nodes[0].gextrawmempool()), set())
+        assert_equal(set(self.nodes[0].getrawmempool()), set())
 
 if __name__ == '__main__':
     MempoolCoinbaseTest().main()

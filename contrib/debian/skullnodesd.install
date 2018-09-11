@@ -1,2 +1,2 @@
-usr/local/bin/xtrawd usr/bin
-usr/local/bin/xtraw-cli usr/bin
+usr/local/bin/sendd usr/bin
+usr/local/bin/send-cli usr/bin

@@ -1,6 +1,6 @@
 Mac OS X Build Instructions and Notes
 ====================================
-This guide will show you how to build xtrawd (headless client) for OSX.
+This guide will show you how to build sendd (headless client) for OSX.
 
 Notes
 -----
@@ -40,14 +40,14 @@ Instructions: Homebrew
 
         brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5
 
-### Building `xtrawd`
+### Building `sendd`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/BitcoinGOAT/XTraw.gitt
-        cd XTraw
+        git clone https://github.com/SocialSend/SocialSend.git
+        cd SEND
 
-2.  Build xtrawd:
+2.  Build sendd:
 
         ./autogen.sh
 Pre 10.12:
@@ -65,7 +65,7 @@ Post 10.13:
 
         make check
 
-4.  (Optional) You can also install xtrawd to your path:
+4.  (Optional) You can also install sendd to your path:
 
         make install
 
@@ -77,7 +77,7 @@ Download Qt Creator from http://www.qt.io/download/. Download the "community edi
 1. Make sure you installed everything through homebrew mentioned above
 2. Do a proper ./configure --with-gui=qt5 --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "xtraw-qt" as project name, enter src/qt as location
+4. Enter "send-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."
@@ -87,11 +87,11 @@ Download Qt Creator from http://www.qt.io/download/. Download the "community edi
 
 Creating a release build
 ------------------------
-You can ignore this section if you are building `xtrawd` for your own use.
+You can ignore this section if you are building `sendd` for your own use.
 
-xtrawd/xtraw-cli binaries are not included in the xtraw-Qt.app bundle.
+sendd/send-cli binaries are not included in the send-Qt.app bundle.
 
-If you are building `xtrawd` or `xtraw-qt` for others, your build machine should be set up
+If you are building `sendd` or `send-qt` for others, your build machine should be set up
 as follows for maximum compatibility:
 
 All dependencies should be compiled with these flags:
@@ -100,30 +100,30 @@ All dependencies should be compiled with these flags:
  -arch x86_64
  -isysroot $(xcode-select --print-path)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
 
-Once dependencies are compiled, see release-process.md for how the XTraw-Qt.app
+Once dependencies are compiled, see release-process.md for how the SEND-Qt.app
 bundle is packaged and signed to create the .dmg disk image that is distributed.
 
 Running
 -------
 
-It's now available at `./xtrawd`, provided that you are still in the `src`
+It's now available at `./sendd`, provided that you are still in the `src`
 directory. We have to first create the RPC configuration file, though.
 
-Run `./xtrawd` to get the filename where it should be put, or just try these
+Run `./sendd` to get the filename where it should be put, or just try these
 commands:
 
-    echo -e "rpcuser=skullrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/XTraw/xtraw.conf"
-    chmod 600 "/Users/${USER}/Library/Application Support/XTraw/xtraw.conf"
+    echo -e "rpcuser=sendrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/SEND/send.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/SEND/send.conf"
 
 The next time you run it, it will start downloading the blockchain, but it won't
 output anything while it's doing this. This process may take several hours;
 you can monitor its process by looking at the debug.log file, like this:
 
-    tail -f $HOME/Library/Application\ Support/XTraw/debug.log
+    tail -f $HOME/Library/Application\ Support/SEND/debug.log
 
 Other commands:
 -------
 
-    ./xtrawd -daemon # to start the xtraw daemon.
-    ./xtraw-cli --help  # for a list of command-line options.
-    ./xtraw-cli help    # When the daemon is running, to get a list of RPC commands
+    ./sendd -daemon # to start the send daemon.
+    ./send-cli --help  # for a list of command-line options.
+    ./send-cli help    # When the daemon is running, to get a list of RPC commands

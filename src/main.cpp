@@ -41,7 +41,7 @@ using namespace boost;
 using namespace std;
 
 #if defined(NDEBUG)
-#error "XTraww cannot be compiled without assertions."
+#error "XTraw cannot be compiled without assertions."
 #endif
 
 /**
@@ -774,7 +774,7 @@ bool IsFinalTx(const CTransaction& tx, int nBlockHeight, int64_t nBlockTime)
  * Check transaction inputs to mitigate two
  * potential denial-of-service attacks:
  *
- * 1. scriptSigs with extraw data stuffed into them,
+ * 1. scriptSigs with extra data stuffed into them,
  *    not consumed by scriptPubKey (or P2SH script)
  * 2. P2SH scripts with a crazy number of expensive
  *    CHECKSIG/CHECKMULTISIG operations
@@ -797,7 +797,7 @@ bool AreInputsStandard(const CTransaction& tx, const CCoinsViewCache& mapInputs)
         if (nArgsExpected < 0)
             return false;
 
-        // Transactions with extraw stuff in their scriptSigs are
+        // Transactions with extra stuff in their scriptSigs are
         // non-standard. Note that this EvalScript() call will
         // be quick, because if there are any operations
         // beside "push data" in the scriptSig
@@ -821,7 +821,7 @@ bool AreInputsStandard(const CTransaction& tx, const CCoinsViewCache& mapInputs)
             } else {
                 // Any other Script with less than 15 sigops OK:
                 unsigned int sigops = subscript.GetSigOpCount(true);
-                // ... extraw data left on the stack after execution is OK, too:
+                // ... extra data left on the stack after execution is OK, too:
                 return (sigops <= MAX_P2SH_SIGOPS);
             }
         }
@@ -2308,7 +2308,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("xtraww-scriptch");
+    RenameThread("xtraw-scriptch");
     scriptcheckqueue.Thread();
 }
 

@@ -94,7 +94,7 @@ QString BitcoinUnits::description(int unit)
     } else {
         switch (unit) {
         case SEND:
-            return QString("TestSKULLNODEs");
+            return QString("TestXTRAWs");
         case mSEND:
             return QString("Milli-TestXTRAW (1 / 1" THIN_SP_UTF8 "000)");
         case uSEND:

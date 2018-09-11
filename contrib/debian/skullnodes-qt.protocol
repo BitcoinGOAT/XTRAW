@@ -1,6 +1,6 @@
 [Protocol]
 exec=xtraw-qt '%u'
-protocol=xtraw
+protocol=send
 input=none
 output=none
 helper=true

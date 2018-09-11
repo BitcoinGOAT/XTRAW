@@ -145,11 +145,11 @@ Value getdifficulty(const Array& params, bool fHelp)
 }
 
 
-Value gextrawmempool(const Array& params, bool fHelp)
+Value getrawmempool(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 1)
         throw runtime_error(
-            "gextrawmempool ( verbose )\n"
+            "getrawmempool ( verbose )\n"
             "\nReturns all transaction ids in memory pool as a json array of string transaction ids.\n"
             "\nArguments:\n"
             "1. verbose           (boolean, optional, default=false) true for a json object, false for array of transaction ids\n"
@@ -173,7 +173,7 @@ Value gextrawmempool(const Array& params, bool fHelp)
             "  }, ...\n"
             "]\n"
             "\nExamples\n" +
-            HelpExampleCli("gextrawmempool", "true") + HelpExampleRpc("gextrawmempool", "true"));
+            HelpExampleCli("getrawmempool", "true") + HelpExampleRpc("getrawmempool", "true"));
 
     bool fVerbose = false;
     if (params.size() > 0)
@@ -402,8 +402,8 @@ Value gettxout(const Array& params, bool fHelp)
             "     \"hex\" : \"hex\",        (string) \n"
             "     \"reqSigs\" : n,          (numeric) Number of required signatures\n"
             "     \"type\" : \"pubkeyhash\", (string) The type, eg pubkeyhash\n"
-            "     \"addresses\" : [          (array of string) array of skx addresses\n"
-            "     \"skxaddress\"   	 	(string) skx address\n"
+            "     \"addresses\" : [          (array of string) array of XTRAW addresses\n"
+            "     \"XTRAWaddress\"   	 	(string) XTRAW address\n"
             "        ,...\n"
             "     ]\n"
             "  },\n"

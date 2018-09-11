@@ -50,7 +50,7 @@ class EstimateFeeTest(BitcoinTestFramework):
 
         # Mine blocks with node2 until the memory pool clears:
         count_start = self.nodes[2].getblockcount()
-        while len(self.nodes[2].gextrawmempool()) > 0:
+        while len(self.nodes[2].getrawmempool()) > 0:
             self.nodes[2].setgenerate(True, 1)
             self.sync_all()
 
@@ -80,7 +80,7 @@ class EstimateFeeTest(BitcoinTestFramework):
                 raise AssertionError("Estimated fee (%f) out of range (%f,%f)"%(float(e), min_fee_kb, max_fee_kb))
 
         # Finish by mining a normal-sized block:
-        while len(self.nodes[0].gextrawmempool()) > 0:
+        while len(self.nodes[0].getrawmempool()) > 0:
             self.nodes[0].setgenerate(True, 1)
             self.sync_all()
 

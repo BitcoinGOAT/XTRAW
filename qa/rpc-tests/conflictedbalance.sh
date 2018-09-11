@@ -112,7 +112,7 @@ TXID_D=$( $CLI $B1ARGS sendtoaddress $B2ADDRESS 100.0)
 CheckBalance "$B1ARGS" 0
 
 # Mutate TXID_C and add it to B2's memory pool:
-RAWTX_C=$( $CLI $B1ARGS gextrawtransaction $TXID_C )
+RAWTX_C=$( $CLI $B1ARGS getrawtransaction $TXID_C )
 
 # ... mutate C to create C'
 L=${RAWTX_C:82:2}

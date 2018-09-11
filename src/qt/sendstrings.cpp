@@ -103,7 +103,7 @@ QT_TRANSLATE_NOOP("xtraw-core", ""
 QT_TRANSLATE_NOOP("xtraw-core", ""
 "Log transaction priority and fee per kB when mining blocks (default: %u)"),
 QT_TRANSLATE_NOOP("xtraw-core", ""
-"Maintain a full transaction index, used by the gextrawtransaction rpc call "
+"Maintain a full transaction index, used by the getrawtransaction rpc call "
 "(default: %u)"),
 QT_TRANSLATE_NOOP("xtraw-core", ""
 "Maximum size of data in data carrier transactions we relay and mine "

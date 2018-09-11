@@ -52,14 +52,14 @@ using namespace boost;
 using namespace std;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("skx:");
+const QString BITCOIN_IPC_PREFIX("XTRAW:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char* BIP71_MIMETYPE_PAYMENT = "application/skx-payment";
-const char* BIP71_MIMETYPE_PAYMENTACK = "application/skx-paymentack";
-const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/skx-paymentrequest";
+const char* BIP71_MIMETYPE_PAYMENT = "application/XTRAW-payment";
+const char* BIP71_MIMETYPE_PAYMENTACK = "application/XTRAW-paymentack";
+const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/XTRAW-paymentrequest";
 // BIP70 max payment request size in bytes (DoS protection)
 const qint64 BIP70_MAX_PAYMENTREQUEST_SIZE = 50000;
 
@@ -295,7 +295,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) : QObject(p
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "emit message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start skx: click-to-pay handler"));
+                tr("Cannot start XTRAW: click-to-pay handler"));
         } else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
             connect(this, SIGNAL(receivedPaymentACK(QString)), this, SLOT(handlePaymentACK(QString)));

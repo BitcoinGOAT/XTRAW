@@ -106,7 +106,7 @@ def list_available(sendd):
     unspent = sendd.listunspent(0)
     for output in unspent:
         # listunspent doesn't give addresses, so:
-        rawtx = sendd.gextrawtransaction(output['txid'], 1)
+        rawtx = sendd.getrawtransaction(output['txid'], 1)
         vout = rawtx["vout"][output['vout']]
         pk = vout["scriptPubKey"]
 
@@ -182,7 +182,7 @@ def create_tx(sendd, fromaddresses, toaddress, amount, fee):
 def compute_amount_in(sendd, txinfo):
     result = Decimal("0.0")
     for vin in txinfo['vin']:
-        in_info = sendd.gextrawtransaction(vin['txid'], 1)
+        in_info = sendd.getrawtransaction(vin['txid'], 1)
         vout = in_info['vout'][vin['vout']]
         result = result + vout['value']
     return result

@@ -242,7 +242,7 @@ public:
         fWalletUnlockAnonymizeOnly = false;
 
         // Stake Settings
-        nHashDrift = 30;
+        nHashDrift = 45;
         nStakeSplitThreshold = 2000;
         nHashInterval = 22;
         nStakeSetUpdateTime = 300; // 5 minutes

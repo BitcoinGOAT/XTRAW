@@ -106,11 +106,11 @@ void TxToJSON(const CTransaction& tx, const uint256 hashBlock, Object& entry)
     }
 }
 
-Value gextrawtransaction(const Array& params, bool fHelp)
+Value getrawtransaction(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "gextrawtransaction \"txid\" ( verbose )\n"
+            "getrawtransaction \"txid\" ( verbose )\n"
             "\nNOTE: By default this function only works sometimes. This is when the tx is in the mempool\n"
             "or there is an unspent output in the utxo for this transaction. To make it always work,\n"
             "you need to maintain a transaction index, using the -txindex command line option.\n"
@@ -153,7 +153,7 @@ Value gextrawtransaction(const Array& params, bool fHelp)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"skxaddress\"        (string) skx address\n"
+            "           \"XTRAWaddress\"        (string) XTRAW address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -167,7 +167,7 @@ Value gextrawtransaction(const Array& params, bool fHelp)
             "}\n"
 
             "\nExamples:\n" +
-            HelpExampleCli("gextrawtransaction", "\"mytxid\"") + HelpExampleCli("gextrawtransaction", "\"mytxid\" 1") + HelpExampleRpc("gextrawtransaction", "\"mytxid\", 1"));
+            HelpExampleCli("getrawtransaction", "\"mytxid\"") + HelpExampleCli("getrawtransaction", "\"mytxid\" 1") + HelpExampleRpc("getrawtransaction", "\"mytxid\", 1"));
 
     uint256 hash = ParseHashV(params[0], "parameter 1");
 
@@ -205,9 +205,9 @@ Value listunspent(const Array& params, bool fHelp)
             "\nArguments:\n"
             "1. minconf          (numeric, optional, default=1) The minimum confirmations to filter\n"
             "2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter\n"
-            "3. \"addresses\"    (string) A json array of skx addresses to filter\n"
+            "3. \"addresses\"    (string) A json array of XTRAW addresses to filter\n"
             "    [\n"
-            "      \"address\"   (string) skx address\n"
+            "      \"address\"   (string) XTRAW address\n"
             "      ,...\n"
             "    ]\n"
             "\nResult\n"
@@ -215,7 +215,7 @@ Value listunspent(const Array& params, bool fHelp)
             "  {\n"
             "    \"txid\" : \"txid\",        (string) the transaction id \n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"address\" : \"address\",  (string) the skx address\n"
+            "    \"address\" : \"address\",  (string) the XTRAW address\n"
             "    \"account\" : \"account\",  (string) The associated account, or \"\" for the default account\n"
             "    \"scriptPubKey\" : \"key\", (string) the script key\n"
             "    \"amount\" : x.xxx,         (numeric) the transaction amount in btc\n"
@@ -319,7 +319,7 @@ Value createrawtransaction(const Array& params, bool fHelp)
             "     ]\n"
             "2. \"addresses\"           (string, required) a json object with addresses as keys and amounts as values\n"
             "    {\n"
-            "      \"address\": x.xxx   (numeric, required) The key is the skx address, the value is the btc amount\n"
+            "      \"address\": x.xxx   (numeric, required) The key is the XTRAW address, the value is the btc amount\n"
             "      ,...\n"
             "    }\n"
 
@@ -409,7 +409,7 @@ Value decoderawtransaction(const Array& params, bool fHelp)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"12tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) skx address\n"
+            "           \"12tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) XTRAW address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -449,7 +449,7 @@ Value decodescript(const Array& params, bool fHelp)
             "  \"type\":\"type\", (string) The output type\n"
             "  \"reqSigs\": n,    (numeric) The required signatures\n"
             "  \"addresses\": [   (json array of string)\n"
-            "     \"address\"     (string) skx address\n"
+            "     \"address\"     (string) XTRAW address\n"
             "     ,...\n"
             "  ],\n"
             "  \"p2sh\",\"address\" (string) script address\n"

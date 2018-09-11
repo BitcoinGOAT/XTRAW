@@ -1,39 +1,39 @@
-XTraw Core
+SEND Core
 =====================
 
 Setup
 ---------------------
-[XTraw Core](http://xtraw.io) is the original XTraw client and it builds the backbone of the network. However, it downloads and stores the entire history of XTraw transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[SEND Core](http://socialsend.io) is the original SEND client and it builds the backbone of the network. However, it downloads and stores the entire history of SEND transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run XTraw on your native platform.
+The following are some helpful notes on how to run SEND on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- bin/32/xtraw-qt (GUI, 32-bit) or bin/32/xtrawd (headless, 32-bit)
-- bin/64/xtraw-qt (GUI, 64-bit) or bin/64/xtrawd (headless, 64-bit)
+- bin/32/send-qt (GUI, 32-bit) or bin/32/sendd (headless, 32-bit)
+- bin/64/send-qt (GUI, 64-bit) or bin/64/sendd (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run xtraw-qt.exe.
+Unpack the files into a directory, and then run send-qt.exe.
 
 ### OSX
 
-Drag XTraw-Qt to your applications folder, and then run XTraw-Qt.
+Drag SEND-Qt to your applications folder, and then run SEND-Qt.
 
 ### Need Help?
 
-* See the documentation at the [XTraw Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [SEND Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or [Discord](https://discord.gg/wcKCrWW) 
-
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [SEND Forum](http://forum.send.org/).
+* Join one of our Slack groups [SEND Slack Groups](https://send.org/slack-logins/).
 
 Building
 ---------------------
-The following are developer notes on how to build XTraw on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build SEND on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build XTraw on your native platform.
 
 Development
 ---------------------
-The XTraw repo's [root README](https://github.com/BitcoinGOAT/XTraw/blob/master/doc/README.md) contains relevant information on the development process and automated testing.
+The Send repo's [root README](https://github.com/SEND-Project/SEND/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -55,8 +55,8 @@ The XTraw repo's [root README](https://github.com/BitcoinGOAT/XTraw/blob/master/
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0)
-* Join the [XTraw](https://xtraw.io)
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [SEND](http://forum.send.org/) forum.
+* Join the [SEND-Dev](https://send-dev.slack.com/) Slack group ([Sign-Up](https://send-dev.herokuapp.com/)).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
