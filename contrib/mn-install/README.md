@@ -1,10 +1,10 @@
 # XTraw
-Shell script to install a [XTraw Masternode](https://xtraw.io) on a Linux server running Ubuntu 16.04. Use it on your own risk.
+Shell script to install a [XTraw Masternode](https://traw.network) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ***
 
 ## Installation
 ```
-wget -N https://raw.githubusercontent.com/BitcoinGOAT/XTraw/master/contrib/mn-install/xtraw_install.sh
+wget -N https://raw.githubusercontent.com/BitcoinGOAT/XTRAW/master/contrib/mn-install/xtraw_install.sh
 bash xtraw_install.sh
 ```
 ***
@@ -14,7 +14,7 @@ bash xtraw_install.sh
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
 1. Open the XTraw Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: **MN1**  
-3. Send **10000** XTRAW to **MN1**. You need to send all 10000 coins in one single transaction.
+3. Send **145000** XTRAW to **MN1**. You need to send all 145000 coins in one single transaction.
 4. Wait for 15 confirmations.  
 5. Go to **Tools -> "Debug Console"**  
 6. Type the following command: **masternode outputs**  
@@ -58,4 +58,4 @@ systemctl is-enabled XTraw #To check if XTraw service is enabled on boot
 ```  
 ***
 
-Based on awesome install scripts by [Zoldur][https://github.com/zoldur]
+Based on awesome install scripts by [Zoldur](https://github.com/zoldur)
