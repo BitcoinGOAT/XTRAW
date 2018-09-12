@@ -1610,9 +1610,16 @@ void StartNode(boost::thread_group& threadGroup)
     // Dump network addresses
     threadGroup.create_thread(boost::bind(&LoopForever<void (*)()>, "dumpaddr", &DumpAddresses, DUMP_ADDRESSES_INTERVAL * 1000));
 
-    // ppcoin:mint proof-of-stake blocks in the background
-    /////if (GetBoolArg("-staking", true))
-        threadGroup.create_thread(boost::bind(&TraceThread<void (*)()>, "stakemint", &ThreadStakeMinter));
+    // Mint proof-of-stake blocks in the background
+    if (GetBoolArg("-staking", true))
+    {
+    	LogPrintf("Creating staking thread\n");
+    	threadGroup.create_thread(boost::bind(&TraceThread<void (*)()>, "stakemint", &ThreadStakeMinter));
+    }
+    else
+    {
+    	LogPrintf("Not creating staking thread\n");
+    }
 }
 
 bool StopNode()
